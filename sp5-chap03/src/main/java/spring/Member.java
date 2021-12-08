@@ -1,7 +1,5 @@
 package spring;
 
-import sun.util.resources.LocaleData;
-
 import java.time.LocalDateTime;
 
 public class Member {
@@ -45,7 +43,7 @@ public class Member {
     }
 
     public void changePassword(String oldPassword, String newPassword){
-        if(!password.equals(oldPassword)) throw new WrongPasswordException();
+        if(!password.equals(oldPassword)) throw new WrongPasswordException("wrongPasswordException: " + oldPassword);
         this.password = newPassword;
     }
 }
